@@ -1,6 +1,6 @@
 # Real Time Word Counter (VS Code Extension)
 
-A simple VS Code extension for exam practice: live word count, adjustable word limit, and a countdown timer right in the status bar.
+A simple VS Code extension for real-time typing practice: live word count, adjustable word limit, and a countdown timer right in the status bar.
 
 ## Features
 
