@@ -1,0 +1,90 @@
+{
+  "name": "real-time-word-counter",
+  "displayName": "Real Time Word Counter",
+  "description": "Real-time word count, adjustable word limit and adjustable countdown timer for exam practice",
+  "version": "1.2.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Exam Word Counter",
+      "properties": {
+        "examCounter.wordLimit": {
+          "type": "number",
+          "default": 250,
+          "description": "Target word limit for your essay (0 = no limit)"
+        },
+        "examCounter.timeMinutes": {
+          "type": "number",
+          "default": 30,
+          "description": "Total time per round, in minutes"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "examCounter.showMenu",
+        "title": "Exam Counter: Show Adjustment Menu"
+      },
+      {
+        "command": "examCounter.setWordLimit",
+        "title": "Exam Counter: Set Word Limit"
+      },
+      {
+        "command": "examCounter.increaseLimit",
+        "title": "Exam Counter: Word Limit +10"
+      },
+      {
+        "command": "examCounter.decreaseLimit",
+        "title": "Exam Counter: Word Limit −10"
+      },
+      {
+        "command": "examCounter.setTimeMinutes",
+        "title": "Exam Counter: Set Round Time (Minutes)"
+      },
+      {
+        "command": "examCounter.increaseTime",
+        "title": "Exam Counter: Time +5 Minutes"
+      },
+      {
+        "command": "examCounter.decreaseTime",
+        "title": "Exam Counter: Time −5 Minutes"
+      },
+      {
+        "command": "examCounter.startTimer",
+        "title": "Exam Counter: Start Timer"
+      },
+      {
+        "command": "examCounter.resetTimer",
+        "title": "Exam Counter: Reset Timer"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "examCounter.increaseLimit",
+        "key": "ctrl+alt+up",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "examCounter.decreaseLimit",
+        "key": "ctrl+alt+down",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "examCounter.increaseTime",
+        "key": "ctrl+alt+right",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "examCounter.decreaseTime",
+        "key": "ctrl+alt+left",
+        "when": "editorTextFocus"
+      }
+    ]
+  }
+}
